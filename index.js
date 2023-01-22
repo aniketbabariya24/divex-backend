@@ -7,7 +7,7 @@ const { connection } = require('./configs/db');
 // const { UserModel } = require('./models/User.model');
 const app= express();
 app.use(cors({
-    origin:"*"
+    origin:'*'
 }));
 
 app.use(express.json());
