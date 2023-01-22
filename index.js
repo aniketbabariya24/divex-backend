@@ -3,6 +3,11 @@ require('dotenv').config()
 const { connection } = require('./configs/db');
 // const { UserModel } = require('./models/User.model');
 const app= express();
+const cors= require('cors');
+app.use(cors({
+    origin:"*"
+}));
+
 app.use(express.json());
 
 const {userRoute}= require('./routes/users.route')
