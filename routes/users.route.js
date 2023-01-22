@@ -13,9 +13,10 @@ userRoute.post('/register', async(req,res)=>{
                 res.send("Error while Hashing")
               console.log(err);
             }else{
-              const user= new UserModel({fname,lname,email,mobile,password:securePass});
-              await user.save();
-              console.log(user);
+              await UserModel.create({fname,lname,email,mobile,password:securePass});
+              // await user.save();
+              
+              // console.log(user);
               res.send("Registered")
             }
           });
